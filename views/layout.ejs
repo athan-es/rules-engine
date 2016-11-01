@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=typeof title == 'undefined' ? 'New Sails App' : title%></title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-red.min.css" />
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/ares_public.css">
+    <link rel="stylesheet" href="/styles/ares.css">
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+</head>
+<body>
+  <div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout-icon"></div>
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout__title">
+          <img class="siteLogo" src="https://ih1.redbubble.net/image.117475822.0277/sticker,375x360.u3.png"/>
+          Ares III
+        </span>
+        <div class="mdl-layout-spacer"></div>
+        <ul class="menuActions h-menu">    
+          <li class="searchBar">
+            <i class="fa fa-search"></i>
+          </li> 
+          <li class="appDrawers">
+            <i class="fa fa-th"></i>
+          </li>       
+          <% if(typeof req.user != 'undefined') { %>
+            <li class="userAvatar">
+              <% if(req.user.name == "Mark Watney") { %>
+                <img src="http://vignette1.wikia.nocookie.net/the-martian/images/1/18/Mark_Watney.jpg/revision/latest?cb=20150608134727"/>                  
+              <% } %>
+              <% if(req.user.name == "Ares Admin") { %>
+                <img src="http://ih1.redbubble.net/image.98050092.7114/fc,550x550,black.u5.jpg"/>
+              <% } %>
+              <div id="userMenuOptions" class="uaName">
+                <%- req.user.name %>                 
+              </div>
+
+              <ul id="userMenuItems" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="userMenuOptions">
+                <li class="mdl-menu__item"><i class="fa fa-bell"></i> Alerts</li>
+                <li class="mdl-menu__item"><i class="fa fa-envelope-o"></i> Messages</li>
+                <li class="mdl-menu__item"><i class="fa fa-user"></i> My Profile</li>
+                <li class="mdl-menu__item"><i class="fa fa-cog"></i> Settings</li>  
+                <li class="listDivider"></li>  
+                <li id="menuLogOut" class="mdl-menu__item"><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+              </ul>
+
+            </li>
+          <% } %>
+          </ul>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout__title">Ares III Menu</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="#">Activities</a>
+        <a class="mdl-navigation__link" href="#">Tasks</a>
+        <a class="mdl-navigation__link" href="#">Teams</a>
+        <a class="mdl-navigation__link" href="#">News & Alerts</a>
+        <a class="mdl-navigation__link" href="#">Trackers</a>
+      </nav>
+    </div>
+
+    <main class="mdl-layout__content">
+      <%- body %> 
+    </main>
+
+    <footer class="mdl-mini-footer" style="display:none;">
+      <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo">About</div>
+          <ul class="mdl-mini-footer__link-list">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy & Terms</a></li>
+          </ul>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="modalBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">  
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h3 id="modalBoxLabel"></h3> 
+          </div>
+          <div class="formMsgCont"></div>
+          <div class="modal-body">    
+          </div>
+          <div class="modal-footer">
+            <div id="mdhandler" style="display:none;"></div>
+            <div id="data" style="display:none;"></div> 
+          
+            <button id="closeModal" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button id="submitModal" type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="notifyMessage" class="mdl-js-snackbar mdl-snackbar">
+      <div class="mdl-snackbar__text"></div>
+      <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+    
+  </div>
+
+  <!--
+      Client-side Templates
+      ========================
+
+      HTML templates are important prerequisites of modern, rich client applications.
+      To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+      that you load these templates client-side.
+
+      By default, your Gruntfile is configured to automatically load and precompile
+      client-side JST templates in your `assets/templates` folder, then
+      include them here automatically (between TEMPLATES and TEMPLATES END).
+
+      To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Import templates from other directories
+          + Use a different template engine (handlebars, jade, dust, etc.)
+          + Internationalize your client-side templates using a server-side
+            stringfile before they're served.
+  -->
+
+  <!--TEMPLATES-->
+  
+  <!--TEMPLATES END-->
+
+
+  <!--
+
+    Client-side Javascript
+    ========================
+
+    You can always bring in JS files manually with `script` tags, or asynchronously
+    on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+    take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+    By default, files in your `assets/js` folder are included here
+    automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+    CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+    and concatenated into a single file.
+
+    To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+    For example, here are a few things you could do:
+
+        + Change the order of your scripts
+        + Import scripts from other directories
+        + Use a different preprocessor, like TypeScript
+
+  -->
+
+  <!--SCRIPTS-->
+  <script src="/js/dependencies/sails.io.js"></script>
+  <script src="/js/dependencies/ares_public.js"></script>
+  <script src="/js/dependencies/ares.js"></script>
+  <script src="/js/third-party/bootstrap.min.js"></script>
+  <script src="/js/third-party/jquery.form.js"></script>
+  <!--SCRIPTS END-->
+</body>
+</html>

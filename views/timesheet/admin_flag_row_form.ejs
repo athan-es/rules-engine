@@ -1,0 +1,8 @@
+<div class="actTitle"><label>Item Title</label>: <%= tsRow.title %></div>
+<form id="flagTsRow" action="admin/flagRow" method="POST">
+	<div class="form-group">
+	    <label>Comments</label>
+	    <textarea class="form-control" rows="3" name="comment"></textarea>
+	</div>
+    <input type="hidden" name="tsid" value="<%= tsRow.id %>"/>
+</form>

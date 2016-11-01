@@ -1,0 +1,183 @@
+img.siteLogo{
+    width: 50px;
+    position: relative;
+    top: -3px;
+}
+
+/*Nav*/
+div.mdl-menu__container {
+    margin-right: 25px;
+}
+#userMenuItems li{
+    margin: 0;
+    width: 100%;
+    line-height: 15px;
+    display: block;
+    height: initial;
+    padding: 5px 0 10px 10px;
+    color:#337ab7;
+}
+#userMenuItems i{
+    font-size: 11px;
+    margin-right: 10px;
+    position: relative;
+    top: -1px;
+}
+#userMenuItems li.listDivider{
+    height: 1px;
+    border-bottom: 1px solid #eee;
+    margin: 0px 0 5px;
+    padding: 0px;
+}
+ul li a{
+    text-decoration:none;
+}
+.menuActions li{
+	display: inline-block;
+    margin: 0 7px;
+    cursor:pointer;
+}
+.menuActions .userAvatar{
+	border-left: 1px dotted #777;
+    padding: 0px 8px;
+}
+.userAvatar img{
+width: 35px;
+    border-radius: 50px;
+    height: 35px;
+    box-shadow: 0px 0px 3px #ccc;
+    margin-right:3px;
+}
+.userAvatar .uaName{
+	display: inline-block;
+}
+
+/*body*/
+main.mdl-layout__content{
+    color: #5e5e5e;
+    background-color: #edecec;
+    font-family: noto-sans;	
+}
+
+/*main layout*/
+.overviewStat{
+text-align: center;
+}
+main section{
+    margin: 20px 10px;	
+}
+.section-card-wide{
+	width:98%;
+}
+.section-card-body{
+	   margin: 10px 20px 30px;
+}
+
+/*side menu */
+.sideMenu{
+	list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.sideMenu .mdl-list__item{
+	padding: 10px;
+    cursor: pointer;
+}
+.sideMenu i{
+    margin-right: 10px;
+}
+
+
+.ovStat{
+display: inline-block;
+    width: 31%;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin: 0 10px;
+    border-radius: 4px;
+    background: #009688;
+    padding: 5px;
+    color: #fff;
+    text-align: left;
+    padding: 5px 10px;
+}
+.ovStat .ovCount{
+	font-size: 25px;
+}
+.ovStat i{
+	float: right;
+    vertical-align: top;
+    font-size: 45px;
+    opacity: 0.8;
+    margin: 5px 5px 0;
+}
+
+/*Timesheet*/
+table .tsRow td{
+    cursor:pointer;
+    position: relative;
+}
+.tsRow .tsRowActions button{
+    height: 20px;
+    min-width: initial;
+    width: 20px;
+    margin-right:5px;
+}
+.tsRow .tsRowActions button i{
+    font-size: 13px;    
+}
+.tsRow.tsStat_approved{
+    background: #dcfddc;
+}
+.tsRow.tsStat_flagged{
+    background: #ffdcdc;
+}
+
+/*Misc colors*/
+.color-success{
+    background-color: #5cb85c !important;
+    border-color: #4cae4c !important;
+    color:#fff !important;
+}
+.color-alert{
+    background-color: #d9534f !important;
+    border-color: #d43f3a !important;
+    color:#fff !important;
+}
+
+/*modal*/
+#modalBox .modal-header{
+    padding: 0 15px;    
+}
+#modalBox .formMsgCont{
+    margin: 5px 10px 0;   
+}
+#modalBox .modal-footer{
+    padding: 5px 10px 15px;
+    border-top: none;
+    text-align: center;
+}
+#modalBox .modal-header .close{
+margin-top:5px;
+}
+
+/*timesheet review*/
+.mdl-card__menu .userInfo{
+    margin: -2px 10px 0;
+}
+.mdl-card__menu .userAvatar{
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 50px;
+    padding: 2px;
+    height: 43px;
+}
+.mdl-card__menu .userName{
+    color: #369;
+    font-size: 15px;
+    text-align: right;
+    margin: 0px 10px 0;
+    width: 55px;
+    float:left;
+}

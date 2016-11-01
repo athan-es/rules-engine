@@ -1,0 +1,46 @@
+<div class="mdl-card__title">
+	<h2 class="mdl-card__title-text">TimeTracker Entries</h2>
+</div>
+<div class="section-card-body">
+	<table id="tsTable" class="table table-striped">
+		<tr>
+			<th>Activity Title</th>
+			<th>Description</th>
+			<th>Type</th>
+			<th>Hours</th>
+			<th>Amount</th>
+			<th style="width:75px;"></th>
+		</tr>
+		<% _.each(curUser.timesheets, function(ts) { %>
+		<tr class="tsRow" data-tsid='<%= ts.id %>'>
+			<td><%= ts.title %></td>
+			<td><%= ts.description %></td>
+			<td><%= ts.type %></td>
+			<td><%= ts.hours %></td>
+			<td><%= ts.amount %></td>
+			<td>
+                <div class='tsRowActions' style="display:none">
+                    <button data-btnact="tsEdit" class="color-success mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                        <i class="material-icons">mode_edit</i>
+                    </button>
+                    <button data-btnact="tsDelete" class="color-alert mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </div>
+            </td>
+		</tr>
+		<% }) %> 
+	</table>
+</div>
+<div class="mdl-card__actions mdl-card--border">
+	<div id="submitTimesheet" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Submit Timesheet</div>
+</div>
+<div class="mdl-card__menu">
+	<button id="addTsRow" data-userid="" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+  		<i class="material-icons">add</i>
+	</button>
+</div>
+
+
+
+

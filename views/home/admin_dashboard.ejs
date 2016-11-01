@@ -1,0 +1,23 @@
+<!--
+TODO: use different layouts for each usertype logging in
+
+ex:
+index: function(req, res){
+    res.view({ layout: 'layoutadmin' });
+  }
+
+-->
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col">
+    <%- partial('sidemenu') %>
+  </div>
+
+  <div class="mdl-cell mdl-cell--10-col">
+    <section>
+        <%- partial('quickstats') %>
+    </section>
+    <section class="section-card-wide mdl-card mdl-shadow--2dp">
+        <%- partial('../timesheet/timesheet_admin') %>
+    </section>
+  </div>
+</div> 

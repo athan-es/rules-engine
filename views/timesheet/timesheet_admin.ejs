@@ -1,0 +1,48 @@
+<div class="mdl-card__title">
+	<h2 class="mdl-card__title-text">Timesheet Review</h2>
+</div>
+<div class="section-card-body">
+	<table id="tsTableAdmin" class="table">
+		<tr>
+			<th>Activity Title</th>
+			<th>Description</th>
+			<th>Type</th>
+			<th>Hours</th>
+			<th>Amount</th>
+            <th style="width:75px;"></th>
+		</tr>
+		<% _.each(submittedTimesheets, function(ts) { %>
+		<tr class="tsRow tsStat_<%= ts.ts_status %>" data-tsid='<%= ts.id %>'>
+			<td><%= ts.title %></td>
+			<td><%= ts.description %></td>
+			<td><%= ts.type %></td>
+			<td><%= ts.hours %></td>
+			<td><%= ts.amount %></td>
+            <td>
+                <div class='tsRowActions' style="display:none">
+                    <button data-btnact="tsApprove" class="color-success mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                        <i class="material-icons">done</i>
+                    </button>
+                    <button data-btnact="tsFlag" class="color-alert mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                        <i class="material-icons">report_problem</i>
+                    </button>
+                </div>
+            </td>
+		</tr>
+		<% }) %> 
+	</table>
+</div>
+<div class="mdl-card__actions mdl-card--border">
+	<div id="approveTimesheet" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Approve All Items</div>
+    <div id="returnTimesheet" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Return Timesheet</div>
+</div>
+<div class="mdl-card__menu">
+	<div class="userInfo">
+        <img class="userAvatar" src="http://vignette1.wikia.nocookie.net/the-martian/images/1/18/Mark_Watney.jpg/revision/latest?cb=20150608134727"/>
+        <div class="userName">Mark Watney</div>
+    </div>
+</div>
+
+
+
+

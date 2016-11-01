@@ -1,0 +1,36 @@
+<div class="overviewStat">
+<% if(req.user.name == "Mark Watney") { %>
+    <div class="ovStat">
+        <i class="fa fa-bar-chart"></i>
+        <div class="ovCount">$120</div>
+        <div class="ovTitle">UnSubmitted</div>		
+    </div>
+    <div class="ovStat">
+        <i class="fa fa-pie-chart"></i>
+        <div class="ovCount">$500</div>
+        <div class="ovTitle">Pending</div>		
+    </div>
+    <div class="ovStat">
+        <i class="fa fa-signal"></i>
+        <div class="ovCount">$1,500</div>
+        <div class="ovTitle">Last Paid</div>		
+    </div>
+<% } %>
+<% if(req.user.name == "Ares Admin") { %>
+    <div class="ovStat">
+        <i class="fa fa-bar-chart"></i>
+        <div class="ovCount">$987,121</div>
+        <div class="ovTitle">Open Invoices</div>		
+    </div>
+    <div class="ovStat">
+        <i class="fa fa-pie-chart"></i>
+        <div class="ovCount">$50,987</div>
+        <div class="ovTitle">OverDue</div>		
+    </div>
+    <div class="ovStat">
+        <i class="fa fa-signal"></i>
+        <div class="ovCount">$169M</div>
+        <div class="ovTitle">Remaining Budget</div>		
+    </div>
+<% } %>
+</div>
