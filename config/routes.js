@@ -58,7 +58,7 @@ module.exports.routes = {
   'GET /login': {
     view: 'login',
     locals: {
-      layout: "layouts/admin_layout"
+      layout: "layouts/public_layout"
     }
   },
 
@@ -69,7 +69,7 @@ module.exports.routes = {
   'GET /signup': {
     view: 'signup',
     locals: {
-      layout: false
+      layout: "layouts/public_layout"
     }
   }
 };

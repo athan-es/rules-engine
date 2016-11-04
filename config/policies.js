@@ -40,6 +40,7 @@ module.exports.policies = {
   'TimesheetController': {
       '*': 'isAuthenticated'
   },
+    
     'AdminController': {
       '*': 'isAuthenticated'
   },
@@ -53,8 +54,9 @@ module.exports.policies = {
   },
 
   'UserController': {
-      '*': 'isAuthenticated'
-  },
+      '*': 'isAuthenticated',
+      createUser: true            
+  }
 
 
   /***************************************************************************
