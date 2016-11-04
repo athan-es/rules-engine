@@ -1,5 +1,4 @@
-<% if(req.user.name == "Mark Watney") { %>
-
+<% if(req.user.role == "registered") { %>
 <ul class="demo-list-icon mdl-list sideMenu">
   <li class="mdl-list__item">
     <span class="mdl-list__item-primary-content">
@@ -23,7 +22,7 @@
   </li>
 </ul>
 <% } %>
-<% if(req.user.name == "Ares Admin") { %>
+<% if(req.user.role == "admin") { %>
 <ul class="demo-list-icon mdl-list sideMenu">
   <li class="mdl-list__item">
     <span class="mdl-list__item-primary-content">

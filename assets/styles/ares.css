@@ -67,10 +67,12 @@ main section{
     margin: 20px 10px;	
 }
 .section-card-wide{
-	width:98%;
+    width: 95%;
+    margin: 20px auto 0;
 }
 .section-card-body{
-	   margin: 10px 20px 30px;
+	margin: 10px 20px 30px;
+    min-height: 400px;
 }
 
 /*side menu */
@@ -87,7 +89,6 @@ main section{
     margin-right: 10px;
 }
 
-
 .ovStat{
 display: inline-block;
     width: 31%;
@@ -100,6 +101,7 @@ display: inline-block;
     color: #fff;
     text-align: left;
     padding: 5px 10px;
+    box-shadow: 2px 2px 3px #ccc;
 }
 .ovStat .ovCount{
 	font-size: 25px;

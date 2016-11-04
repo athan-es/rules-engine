@@ -2,14 +2,31 @@
 	<div class="alert alert-danger"><%- message %></div>
 <% } %>
 
-<form id="loginForm" method="POST" action="/login">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+<div class="loginBox mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">Welcome <br/>- Ares III -</h2>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  <div class="mdl-card__supporting-text">
+  
+    <form id="loginForm" method="POST" action="/login">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+    </form>
+
+  </div>    
+  <div class="mdl-card__actions mdl-card--border">
+    <a id="loginFormBtn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Log In
+    </a>
+    <a id="signupFormBtn" href="/signup" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Create New Account
+    </a>
   </div>
-  <input type="submit" value="submit" style="display:none;">
-</form>
+</div>
+

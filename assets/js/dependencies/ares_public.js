@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) { 
-    $( "#loginFormBtn" ).click(function() {
-		$("#loginForm").submit();
+  $( "#loginFormBtn, #signupSubmitFormBtn" ).click(function() {
+		$(".loginBox form").submit();
 	});
 });

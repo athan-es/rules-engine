@@ -1,7 +1,35 @@
-<h1>Signup</h1>
-<form method="POST" action="/user">
-	<input type="name" name="name" placeholder="Name">
-	<input type="email" name="email" placeholder="Email">
-	<input type="password" name="password" placeholder="Password">
-	<input type="submit" value="submit">
-</form>
+<% if(typeof message != 'undefined') { %>
+	<div class="alert alert-danger"><%- message %></div>
+<% } %>
+
+<div class="loginBox mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">Ares III <br>- New Account -</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+  
+	<form id="createAccountForm" method="POST" action="/user/createUser">
+		<div class="form-group">
+        	<label for="">Full Name</label>
+			<input type="text" name="name" class="form-control" placeholder="Name">
+		</div>
+		<div class="form-group">
+        	<label for="">Email address</label>
+			<input type="email" name="email" class="form-control" placeholder="Email">
+		</div>
+		<div class="form-group">
+			<label for="">Password</label>
+			<input type="password" name="password" class="form-control" placeholder="Password">
+		</div>	
+	</form>
+
+  </div>    
+  <div class="mdl-card__actions mdl-card--border">
+  	<a id="signupSubmitFormBtn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Create Account
+    </a>
+    <a href="/login" class="pull-right mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      <i class="fa fa-home"></i> Home
+    </a>    
+  </div>
+</div>

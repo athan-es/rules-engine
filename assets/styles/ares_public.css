@@ -1,5 +1,5 @@
 body.publicSite{
-    background: url('http://www.qygjxz.com/data/out/155/4682394-mars-wallpaper.jpg') 85% 0%;    
+    background: url(../images/mars.png);
 }
 .siteHeader{
     margin: 29px;
@@ -14,13 +14,16 @@ body.publicSite{
 }
 .loginBox{
     width: 320px;
-     height: 320px;
      margin:125px auto;
 }
 .loginBox > .mdl-card__title {
   color: #fff;
   background:
     url('https://getmdl.io/assets/demos/welcome_card.jpg') 16% 0% no-repeat #46B6AC;
+}
+.alert{
+     margin: 30px auto 0;
+    width: 50%;   
 }
 
 

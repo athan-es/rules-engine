@@ -64,10 +64,10 @@
           </li>       
           <% if(typeof req.user != 'undefined') { %>
             <li class="userAvatar">
-              <% if(req.user.name == "Mark Watney") { %>
-                <img src="http://vignette1.wikia.nocookie.net/the-martian/images/1/18/Mark_Watney.jpg/revision/latest?cb=20150608134727"/>                  
+              <% if(req.user.role == "registered") { %>
+                <img src="http://www.findnumberss.com/images/user-icon.png"/>                  
               <% } %>
-              <% if(req.user.name == "Ares Admin") { %>
+              <% if(req.user.role == "admin") { %>
                 <img src="http://ih1.redbubble.net/image.98050092.7114/fc,550x550,black.u5.jpg"/>
               <% } %>
               <div id="userMenuOptions" class="uaName">

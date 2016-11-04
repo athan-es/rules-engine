@@ -1,5 +1,5 @@
 <div class="overviewStat">
-<% if(req.user.name == "Mark Watney") { %>
+<% if(req.user.role == "registered") { %>
     <div class="ovStat">
         <i class="fa fa-bar-chart"></i>
         <div class="ovCount">$120</div>
@@ -16,7 +16,7 @@
         <div class="ovTitle">Last Paid</div>		
     </div>
 <% } %>
-<% if(req.user.name == "Ares Admin") { %>
+<% if(req.user.role == "admin") { %>
     <div class="ovStat">
         <i class="fa fa-bar-chart"></i>
         <div class="ovCount">$987,121</div>
