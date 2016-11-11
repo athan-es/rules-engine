@@ -1,5 +1,7 @@
 body.publicSite{
-    background: url(../images/mars.png);
+    background: url(../images/mars.png) no-repeat;
+    background-size: cover;
+    min-height: initial;
 }
 .siteHeader{
     margin: 29px;

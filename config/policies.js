@@ -56,6 +56,9 @@ module.exports.policies = {
   'UserController': {
       '*': 'isAuthenticated',
       createUser: true            
+  }, 
+  'AclController': {
+      '*': 'isAuthenticated'
   }
 
 
