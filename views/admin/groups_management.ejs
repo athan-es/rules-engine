@@ -1,0 +1,25 @@
+<section class="section-card-wide mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Groups List</h2>
+    </div>
+    <div class="section-card-body">
+        <table id="tsTable" class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Users Assigned</th>
+                <th>id</th>
+            </tr>
+            <% _.each(roleList, function(role) { %>
+            <tr>
+                <td><%= role.key %></td>
+                <td><%= role.id %></td>
+            </tr>
+            <% }) %>
+        </table>
+    </div>
+    <div class="mdl-card__menu">
+        <button id="addTsRow" data-userid="" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">add</i>
+        </button>
+    </div>
+</section>

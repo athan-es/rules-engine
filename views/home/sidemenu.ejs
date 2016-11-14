@@ -23,26 +23,5 @@
 </ul>
 <% } %>
 <% if(req.user.role == "admin") { %>
-<ul class="demo-list-icon mdl-list sideMenu">
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <i class="fa fa-tachometer"></i> Activity Logs
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <i class="fa fa-briefcase"></i> Missions 
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <i class="fa fa-rocket"></i> Equipments
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <i class="fa fa-cog"></i> Configurations
-    </span>
-  </li>
-</ul>
+  <%- partial('../admin/side_menu') %>
 <% } %>

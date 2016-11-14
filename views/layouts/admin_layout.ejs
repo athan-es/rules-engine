@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Administration Panel</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-red.min.css" />
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/ares_admin.css">
+    <link rel="stylesheet" href="/styles/ares_public.css">
+    <link rel="stylesheet" href="/styles/ares.css">
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+</head>
+<body class="publicSite">
+  <div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout-icon"></div>
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout__title">
+          <img class="siteLogo" src="https://ih1.redbubble.net/image.117475822.0277/sticker,375x360.u3.png"/>
+          Ares III - Administration Panel
+        </span>
+        <div class="mdl-layout-spacer"></div>
+        <ul class="menuActions h-menu">    
+          <li class="searchBar">
+            <i class="fa fa-search"></i>
+          </li> 
+          <li class="appDrawers">
+            <i class="fa fa-th"></i>
+          </li>       
+          <% if(typeof req.user != 'undefined') { %>
+            <li class="userAvatar">
+              <% if(req.user.role == "registered") { %>
+                <img src="http://www.findnumberss.com/images/user-icon.png"/>                  
+              <% } %>
+              <% if(req.user.role == "admin") { %>
+                <img src="http://ih1.redbubble.net/image.98050092.7114/fc,550x550,black.u5.jpg"/>
+              <% } %>
+              <div id="userMenuOptions" class="uaName">
+                <%- req.user.name %>                 
+              </div>
+
+              <ul id="userMenuItems" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="userMenuOptions">
+                <li class="mdl-menu__item"><i class="fa fa-bell"></i> Alerts</li>
+                <li class="mdl-menu__item"><i class="fa fa-envelope-o"></i> Messages</li>
+                <li class="mdl-menu__item"><i class="fa fa-user"></i> My Profile</li>
+                <li class="mdl-menu__item"><i class="fa fa-cog"></i> Settings</li>  
+                <li class="listDivider"></li>  
+                <li id="menuLogOut" class="mdl-menu__item"><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+              </ul>
+
+            </li>
+          <% } %>
+          </ul>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout__title">Ares III Menu</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="#">Activities</a>
+        <a class="mdl-navigation__link" href="#">Tasks</a>
+        <a class="mdl-navigation__link" href="#">Teams</a>
+        <a class="mdl-navigation__link" href="#">News & Alerts</a>
+        <a class="mdl-navigation__link" href="#">Trackers</a>
+      </nav>
+    </div>
+
+    <main class="mdl-layout__content">        
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--2-col">
+            <%- partial('../admin/side_menu') %>      
+        </div>
+        <div class="mdl-cell mdl-cell--10-col">
+            <%- body %> 
+        </div>
+      </div> 
+    </main>
+    
+  </div>
+</body>
+</html>
