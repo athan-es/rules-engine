@@ -71,5 +71,15 @@ module.exports.routes = {
     locals: {
       layout: "layouts/public_layout"
     }
+  },
+
+  /*Administrator panel*/
+  '/admin': {
+    controller: 'AdminController',
+    action:'admin_panel',
+    locals: {
+      layout: "layouts/admin_layout"
+    }
   }
+
 };

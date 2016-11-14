@@ -42,7 +42,7 @@ module.exports.policies = {
   },
     
     'AdminController': {
-      '*': 'isAuthenticated'
+      '*': ['isAuthenticated', 'isAdmin']
   },
 
   'CustomerController': {
@@ -59,7 +59,8 @@ module.exports.policies = {
   }, 
   'AclController': {
       '*': 'isAuthenticated'
-  }
+  },
+  
 
 
   /***************************************************************************
