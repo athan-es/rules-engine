@@ -1,7 +1,9 @@
 img.siteLogo{
-    width: 50px;
+    width: 45px;
     position: relative;
     top: -3px;
+    border-radius: 25px;
+    border: 1px solid #985319;
 }
 
 /*Nav*/
@@ -36,7 +38,47 @@ ul li a{
 	display: inline-block;
     margin: 0 7px;
     cursor:pointer;
+    position:relative;
 }
+.appDrawers .mdl-button{
+    padding-top: 2px;
+}
+.appDrawers .mdl-menu__container{
+    width: 300px !important;    
+}
+.appDrawers .mdl-menu__container .mdl-menu{
+    width:100%;
+    clip:rect(0px 300px 98px 0px);
+}
+.appDrawers .appCont{
+    float: left;
+    color: #777;
+    width: 50%;
+    text-align:center;
+    margin:5px 0 7px;
+}
+.appDrawers .mdl-menu__container i{
+    font-size: 37px;
+    display: block;
+    margin-bottom: 5px;
+}
+.appDrawers .mdl-menu__container label{
+    font-size: 13px;
+    display: block;
+}
+.appCont i.fa-cubes{
+    color: #337ab7;
+}
+.appCont i.fa-clock-o{
+    color: #3c763d;
+}
+.appCont i.fa-server{
+    color: rgb(255,82,82);
+}
+.appCont i.fa-cog{
+    color: #b55e5e;
+}
+
 .menuActions .userAvatar{
 	border-left: 1px dotted #777;
     padding: 0px 8px;
@@ -47,6 +89,7 @@ width: 35px;
     height: 35px;
     box-shadow: 0px 0px 3px #ccc;
     margin-right:3px;
+    background:#fff;
 }
 .userAvatar .uaName{
 	display: inline-block;

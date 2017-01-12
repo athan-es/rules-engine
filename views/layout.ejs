@@ -51,8 +51,8 @@
       <div class="mdl-layout-icon"></div>
       <div class="mdl-layout__header-row">
         <span class="mdl-layout__title">
-          <img class="siteLogo" src="https://ih1.redbubble.net/image.117475822.0277/sticker,375x360.u3.png"/>
-          Ares III
+          <img class="siteLogo" src="http://icons.iconarchive.com/icons/elegantthemes/beautiful-flat/48/ship-wheel-icon.png"/>
+          Command Center
         </span>
         <div class="mdl-layout-spacer"></div>
         <ul class="menuActions h-menu">    
@@ -60,15 +60,35 @@
             <i class="fa fa-search"></i>
           </li> 
           <li class="appDrawers">
-            <i class="fa fa-th"></i>
+            <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+              <i class="fa fa-th"></i> Applications
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+              <li class="appCont">
+                <i class="fa fa-cubes"></i>
+                <label>Rules Engine</label> 
+              </li> 
+              <li class="appCont">
+                <i class="fa fa-clock-o"></i>
+                <label>Time Tracker</label> 
+              </li> 
+              <li class="appCont">
+                <i class="fa fa-server"></i>
+                <label>Machine Learning</label> 
+              </li>  
+              <li class="appCont">
+                <i class="fa fa-cog"></i>
+                <label>Settings</label> 
+              </li>            
+            </ul>
           </li>       
           <% if(typeof req.user != 'undefined') { %>
             <li class="userAvatar">
               <% if(req.user.role == "registered") { %>
-                <img src="http://www.findnumberss.com/images/user-icon.png"/>                  
+                <img src="http://icons.iconarchive.com/icons/iconshock/real-vista-mail/72/robot-icon.png"/>                  
               <% } %>
               <% if(req.user.role == "admin") { %>
-                <img src="http://ih1.redbubble.net/image.98050092.7114/fc,550x550,black.u5.jpg"/>
+                <img src="http://icons.iconarchive.com/icons/iconshock/real-vista-mail/72/robot-icon.png"/>
               <% } %>
               <div id="userMenuOptions" class="uaName">
                 <%- req.user.name %>                 
