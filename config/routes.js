@@ -71,5 +71,9 @@ module.exports.routes = {
     locals: {
       layout: "layouts/public_layout"
     }
-  }
+  },
+
+  'GET /rules-engine': {
+    view: 'rules-engine/default'
+  },
 };

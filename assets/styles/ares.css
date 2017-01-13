@@ -1,9 +1,20 @@
+body{
+    background: #edecec !important;
+    font-family: 'Open Sans', sans-serif !important;
+}
 img.siteLogo{
-    width: 45px;
+width: 45px;
     position: relative;
     top: -3px;
     border-radius: 25px;
-    border: 1px solid #985319;
+    background: #fff;
+    border: 1px solid rgb(33,150,243);
+}
+.mdl-layout__header{
+    background:#1d84df;
+}
+.mdl-layout__header-row .mdl-layout__title{
+    font-size: 22px;
 }
 
 /*Nav*/
@@ -80,8 +91,8 @@ ul li a{
 }
 
 .menuActions .userAvatar{
-	border-left: 1px dotted #777;
-    padding: 0px 8px;
+    border-left: 1px dotted #ddd;
+    padding: 0px 8px 0 20px;
 }
 .userAvatar img{
 width: 35px;
@@ -98,9 +109,41 @@ width: 35px;
 /*body*/
 main.mdl-layout__content{
     color: #5e5e5e;
-    background-color: #edecec;
-    font-family: noto-sans;	
+    background-color: #fff;
+    font-family: "Open Sans", sans-serif;	
+    border: 1px solid #ccc;
+    margin: 20px;
 }
+.clBox_main{
+    width:200%;
+}
+.clBox_titleText{
+    font-size: 23px;
+    color: #337ab7;
+    margin: 15px 20px 15px;
+}
+.clBox_body{
+    margin: 20px;
+}
+.clBox_footer{
+
+}
+.clBox_menu{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.clIconList-horz{
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px;
+    color: #777;
+    cursor:pointer;    
+}
+.clIconList-horz:hover{
+    color:#369;
+}
+
 
 /*main layout*/
 .overviewStat{
