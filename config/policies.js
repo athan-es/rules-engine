@@ -56,7 +56,11 @@ module.exports.policies = {
   'UserController': {
       '*': 'isAuthenticated',
       createUser: true            
-  }
+  },
+
+  'Rules-engineController': {
+      '*': 'isAuthenticated'
+  },
 
 
   /***************************************************************************

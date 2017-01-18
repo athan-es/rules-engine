@@ -1,24 +1,46 @@
 <div class="clBox_main">
     <div class="clBox_title">
-        <div class="clBox_titleText">Rules Engine Dashboard</div>
+        <div class="clBox_titleText">Rules Engine Management</div>
+        <div class="clBox_menu">
+            <div id="actApplyRules" class="clIconList-horz">
+                <i class="fa fa-check"></i> Apply Rules 
+            </div>
+            <div class="clIconList-horz">        
+                <i class="fa fa-file-text-o"></i> Reports 
+            </div>
+            <div id="actManageRules" class="clIconList-horz">
+                <i class="fa fa-cog"></i> Manage Rules        
+            </div>
+        </div>
     </div>
     <div class="clBox_top"></div>
-    <div class="clBox_body">
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    <div class="clBox_body">       
+        <table id="tsTableAdmin" class="table">
+		<tr>
+			<th>Inv Date</th>
+			<th>Matter Name</th>
+			<th>Units</th>
+			<th>Description</th>
+			<th>Rate</th>
+            <th style="width:75px;">Name</th>
+            <th>Total</th>
+            <th>Adj Type</th>
+            <th>Adj Reason</th>
+            <th>Rules Matched</th>
+		</tr>
+        <% for (var row in xlsData) { %>
+            <% if(row==1) continue; %>
+            <tr>
+            <% for (var colLetter in reportColumns) { %>
+                <% if(typeof xlsData[row][reportColumns[colLetter]] !== 'undefined') { %>
+                    <td><%= xlsData[row][reportColumns[colLetter]] %> </td>
+                <% } %>
+            <% } %>
+            </tr>
+        <% } %>
+        </table>
     </div>
-    <div class="clBox_footer">
-    </div>
-    <div class="clBox_menu">
-        <div id="actApplyRules" class="clIconList-horz">
-            <i class="fa fa-check"></i> Apply Rules 
-        </div>
-        <div class="clIconList-horz">        
-            <i class="fa fa-file-text-o"></i> Reports 
-        </div>
-        <div id="actManageRules" class="clIconList-horz">
-            <i class="fa fa-cog"></i> Manage Rules        
-        </div>
-    </div>
+    <div class="clBox_footer"></div>        
 </div>
 
 

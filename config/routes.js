@@ -75,5 +75,5 @@ module.exports.routes = {
 
   'GET /rules-engine': {
     view: 'rules-engine/default'
-  },
+  }
 };
