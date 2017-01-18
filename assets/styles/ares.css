@@ -115,7 +115,7 @@ main.mdl-layout__content{
     margin: 20px;
 }
 .clBox_main{
-    width:200%;
+    width:100%;
 }
 .clBox_titleText{
     font-size: 23px;
@@ -268,4 +268,32 @@ margin-top:5px;
     margin: 0px 10px 0;
     width: 55px;
     float:left;
+}
+
+/*clCard*/
+.clCard_main{
+    border: 1px solid #ccc;
+    position: relative;
+    margin: 0 30px 20px;
+    border-top-width: 3px;
+    box-shadow: 1px 3px #eee;
+}
+.clCard_title{
+
+}
+.clCard_titleText{
+    font-size: 16px;
+    color: #435966;
+    margin: 10px 20px;
+}
+.clCard_menu{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #fff;
+}
+.clCard_body{
+    margin: 10px 20px;
+}
+.clCard_footer{
 }
