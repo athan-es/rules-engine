@@ -64,9 +64,23 @@ ul li a{
 .appDrawers .appCont{
     float: left;
     color: #777;
-    width: 50%;
-    text-align:center;
-    margin:5px 0 7px;
+    width: 44%;
+    text-align: center;
+    margin: 0px 8px 15px;
+    padding: 8px 0 0px;
+    border:1px solid transparent;
+}
+.appDrawers .appCont:hover{
+    border: 1px solid #ddd;
+    background: #fafafa;
+    color: rgb(33,150,243);
+    border-radius:4px;
+}
+.appDrawers .appCont:hover i, .appDrawers .appCont:hover label{
+    color: rgb(33,150,243);   
+}
+.appDrawers .appCont a:hover{
+    text-decoration:none;
 }
 .appDrawers .mdl-menu__container i{
     font-size: 37px;
@@ -125,8 +139,8 @@ main.mdl-layout__content{
 .clBox_body{
     margin: 20px;
 }
-.clBox_footer{
-
+.clBox_top{
+    overflow:auto;
 }
 .clBox_menu{
     position: absolute;
@@ -272,11 +286,13 @@ margin-top:5px;
 
 /*clCard*/
 .clCard_main{
-    border: 1px solid #ccc;
-    position: relative;
-    margin: 0 30px 20px;
-    border-top-width: 3px;
+    border: 1px solid #00aeff;
+    margin: 10px 20px;
+    border-top-width: 5px;
     box-shadow: 1px 3px #eee;
+    width: 90%;
+    float: right;
+    position: relative;
 }
 .clCard_title{
 
@@ -295,5 +311,28 @@ margin-top:5px;
 .clCard_body{
     margin: 10px 20px;
 }
-.clCard_footer{
+
+/*forms*/
+.form-groupBlock{
+    margin: 10px 5px;
+    display:block;
 }
+
+/*misc*/
+.placeHolder_full{
+    border: 1px solid #eee;
+    border-radius: 4px;
+    text-align: center;
+    margin: 30px auto;
+    padding: 40px;
+    background: #fafafa;    
+}
+.placeHolder_full label{
+    font-size: 17px;
+    color: #aaa;
+}
+.placeHolder_full button{
+    display: block;
+    margin: 20px auto 0;    
+}
+

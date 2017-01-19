@@ -141,7 +141,7 @@ jQuery(document).ready(function($) {
 	});
 	
 	$("#modalBox").on('click', "#submitModal", function(){
-		//if($("#modalBox #mdhandler").text() == 'addNewTimesheetRow' || $("#modalBox #mdhandler").text() == "editTimesheetRow") {
+		if($("#modalBox #mdhandler").text() == 'addNewTimesheetRow' || $("#modalBox #mdhandler").text() == "editTimesheetRow") {
 			$('#modalBox form').ajaxSubmit({
 	            url: 'http://localhost:1337/'+$('#modalBox form').attr("action"),
 	            error: function(xhr, textStatus, errorThrown) {
@@ -162,7 +162,7 @@ jQuery(document).ready(function($) {
 	                }
 	            }
 	        });
-		//}
+		}
 	});
 
 	/*timesheet review*/

@@ -1,0 +1,50 @@
+.dataTableContent{
+
+}
+
+.addRuleForm{
+    min-height:100px;
+}
+.addRuleForm .groupMain label{
+    text-align: right;
+    margin-right: 5px;   
+}
+.addRuleForm .groupMain .inlineGroup{
+    border-right: 1px solid #ddd;
+    padding-right: 15px;
+    margin-right: 8px;
+    margin-top:5px;
+}
+.addRuleForm .groupMain .inlineGroup:last-of-type {
+    border: none;
+}
+.addRuleForm .inlineGroup{
+    display:inline-block;
+}
+.addRuleForm .subFormGroup{
+    margin: 10px 20px 0;
+    border-top: 2px dotted #ddd;
+    padding-top: 15px;
+}
+.addRuleForm label.small{
+    color:#777;
+}
+.optionForms .form-group{
+    width:100%;
+} 
+.optionForms textarea{
+    width: 75% !important;
+    margin-left:5px;
+}
+.fieldEval{
+    margin-top:10px;
+}
+
+.fieldEval label{
+    width: 115px;
+    text-align: right;
+    margin: 10px 10px 0 0;   
+}
+.fieldEval input{
+    width:50px;
+}
