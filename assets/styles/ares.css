@@ -16,6 +16,9 @@ width: 45px;
 .mdl-layout__header-row .mdl-layout__title{
     font-size: 22px;
 }
+.mdl-layout{
+    height:auto !important;
+}
 
 /*Nav*/
 div.mdl-menu__container {
@@ -127,6 +130,7 @@ main.mdl-layout__content{
     font-family: "Open Sans", sans-serif;	
     border: 1px solid #ccc;
     margin: 20px;
+    min-height:600px;
 }
 .clBox_main{
     width:100%;
@@ -152,10 +156,26 @@ main.mdl-layout__content{
     font-size: 14px;
     margin-left: 10px;
     color: #777;
-    cursor:pointer;    
+    cursor: pointer;
+    border-right: 1px solid #ddd;
+    vertical-align: top;
+    padding: 2px 8px 2px 0; 
 }
 .clIconList-horz:hover{
     color:#369;
+}
+.clIconList-horz .inlineGroup label{
+    display: inline-block;
+    vertical-align: top;   
+}
+.clIconList-horz .inlineGroup select{
+    display: inline-block;
+    width: auto;
+    margin-left: 5px;
+    padding: 0px 3px;
+    height: 27px;
+    position: relative;
+    top: -4px;
 }
 
 
@@ -294,9 +314,6 @@ margin-top:5px;
     float: right;
     position: relative;
 }
-.clCard_title{
-
-}
 .clCard_titleText{
     font-size: 16px;
     color: #435966;
@@ -311,11 +328,28 @@ margin-top:5px;
 .clCard_body{
     margin: 10px 20px;
 }
+.clCard_menu .clIconList-horz{
+    padding: 2px 8px 2px 0;
+    height: 25px;   
+    color: #337ab7;
+    cursor:pointer;
+}
+.clCard_menu .closeBox{
+    color: #777;
+    margin-left: 10px;  
+    cursor:pointer;  
+}
+.clCard_menu .closeBox:hover{
+    color: #a94442;   
+}
 
 /*forms*/
 .form-groupBlock{
     margin: 10px 5px;
     display:block;
+}
+.form-group.inlineGroup{
+    display:inline-block;
 }
 
 /*misc*/
@@ -336,3 +370,19 @@ margin-top:5px;
     margin: 20px auto 0;    
 }
 
+/* Tables */
+table.clTable {
+    margin: 30px 0;
+}
+.clTable .actions i{
+    cursor:pointer;   
+    color:#777;
+    display:inline-block;
+    margin:0 3px; 
+}
+.clTable .actions i:hover{
+    color: #369;   
+}
+table.clTable tr.selected{
+    background: #fffee2;   
+}

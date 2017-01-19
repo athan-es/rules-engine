@@ -6,6 +6,7 @@
 module.exports = {
 	/* Views manager */
 
+
 	/* Actions manager */
 	load_datatable:  function(req, res, next) {
 		if(typeof require !== 'undefined') 
@@ -46,7 +47,7 @@ module.exports = {
 			"Adjustment Reason": "U" 
 		};
 
-		return res.view('rules-engine/load_datatable', {
+		res.view('rules_engine/content_data/load_datatable', {
 			xlsData: xlsDataRows,
 			reportColumns: reportColNamesLetter,
 			layout:false
@@ -61,13 +62,39 @@ module.exports = {
 			rule_condition: req.param('rtTextCondition'),
 			rule_value: req.param('rttext_value'),
 			rule_category: req.param('rtRuleCategory'),
+			rule_threshold: req.param('any_threshold_amount'),
 			rule_weight_score: req.param('weight')
 		};
 
-		Rules-engine.create(ruleObj, function addNewRuleObj(err, ts_row) {
-			if(err) return next(err);
+		Rules_engine.create(ruleObj, function addNewRuleObj(err, ts_row) {
+			if(err) {
+				res.send('error');
+				return next(err);
+			}
 
 			res.send('success');
 		});
-	}
+	},
+
+	getCategoryRules:  function(req, res, next) {
+		Rules_engine.find({rule_category: req.query.rcat}).exec( function(err, categoryRules) {
+			if(err) return next(err);
+			if(!categoryRules) return next();
+
+			res.view('rules_engine/content_data/category_rules_table', {
+				catRules: categoryRules,
+				layout:false
+			});
+		});
+	},
+
+	deleteRule: function(req, res, next) {
+		Rules_engine.destroy(req.query.id).exec( function(err) {
+			if(err){
+				res.send('failed: '+ err);
+			}
+
+			res.send('success');
+		});
+	}	
 };

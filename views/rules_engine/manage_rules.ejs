@@ -1,0 +1,29 @@
+<div id="manageRulesCard" class="clCard_main">
+    <div class="clCard_title">
+        <div class="clCard_titleText">Rules Management</div>
+        <div class="clCard_menu">
+            <div id="actAddRules" class="clIconList-horz openModal" 
+                data-murl="raw?view=rules_engine/add_rules_form"
+                data-mtitle="Add new rule"
+                data-mhandler="addNewRule">
+                <i class="fa fa-plus"></i> Add new rule 
+            </div>
+            <div class="clIconList-horz">        
+                <div class="form-group inlineGroup">
+                    <label class="small">Category</label>
+                    <select id="selRuleCat" name="rcat" class="form-control">
+                        <option value="none">Select ...</option>
+                        <option value="blockbilling">Block Billing</option>                
+                    </select>
+                </div>
+            </div>
+            <i class="fa fa-remove closeBox"></i>   
+        </div>
+    </div>    
+    <div class="clCard_body">
+        <div class="placeHolder_full">
+            <label>Select rule category above</label>
+        </div>
+    </div>
+    <div class="clCard_footer"></div>
+</div>

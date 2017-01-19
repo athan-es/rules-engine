@@ -73,7 +73,7 @@ module.exports.routes = {
     }
   },
 
-  'GET /rules-engine': {
-    view: 'rules-engine/default'
+  'GET /rules_engine': {
+    view: 'rules_engine/default'
   }
 };

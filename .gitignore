@@ -25,6 +25,7 @@ results
 
 node_modules
 assets/documents
+.vscode
 
 npm-debug.log
 
