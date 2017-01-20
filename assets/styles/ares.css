@@ -166,7 +166,9 @@ main.mdl-layout__content{
 }
 .clIconList-horz .inlineGroup label{
     display: inline-block;
-    vertical-align: top;   
+    vertical-align: top;
+    font-weight: normal;
+    color: #777;
 }
 .clIconList-horz .inlineGroup select{
     display: inline-block;
@@ -350,6 +352,7 @@ margin-top:5px;
 }
 .form-group.inlineGroup{
     display:inline-block;
+    width:100%;
 }
 
 /*misc*/

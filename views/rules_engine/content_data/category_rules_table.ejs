@@ -1,31 +1,41 @@
-<table id="catRulesTable" class="table clTable">
-    <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Rule category</th>
-        <th>Data column</th>               
-        <th>Rule type</th>
-        <th>Condition</th>
-        <th style="width:30%">Rule value</th>
-        <th>Min Threshold</th>
-        <th>Weight score</th>
-        <th>Actions</th>
-    </tr>
-    <% for (var i=0; i < catRules.length; i++) { %>
-        <tr id="rid_<%= catRules[i]['id'] %>" data-ruleid="<%= catRules[i]['id'] %>" class="ruleRow">
-            <td><%= catRules[i]['id'] %></td>
-            <td><%= catRules[i]['rule_title'] %></td>
-            <td><%= catRules[i]['rule_category'] %></td>
-            <td><%= catRules[i]['data_column'] %></td>
-            <td><%= catRules[i]['rule_match_type'] %></td>
-            <td><%= catRules[i]['rule_condition'] %></td>
-            <td><%= catRules[i]['rule_value'] %></td>
-            <td><%= catRules[i]['rule_threshold'] %></td>
-            <td><%= catRules[i]['rule_weight_score'] %></td>
-            <td class="actions">
-                <i class="fa fa-pencil editRule"></i>
-                <i class="fa fa-trash-o removeRule"></i>    
-            </td>
+<% if(format == 'checklist') { %>
+    <div class="form-group inlineGroup selectRules">
+        <% for (var i=0; i < catRules.length; i++) { %>
+            <div class="checkbox-group">
+                <input name="ruleopt[]" type="checkbox" value="<%= catRules[i]['id'] %>" checked>  <%= catRules[i]['rule_title'] %>
+            </div>
+        <% } %>
+    </div>
+<% } else { %>
+    <table id="catRulesTable" class="table clTable">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Rule category</th>
+            <th>Data column</th>               
+            <th>Rule type</th>
+            <th>Condition</th>
+            <th style="width:30%">Rule value</th>
+            <th>Min Threshold</th>
+            <th>Weight score</th>
+            <th>Actions</th>
         </tr>
-    <% } %>
-</table>
+        <% for (var i=0; i < catRules.length; i++) { %>
+            <tr id="rid_<%= catRules[i]['id'] %>" data-ruleid="<%= catRules[i]['id'] %>" class="ruleRow">
+                <td><%= catRules[i]['id'] %></td>
+                <td><%= catRules[i]['rule_title'] %></td>
+                <td><%= catRules[i]['rule_category'] %></td>
+                <td><%= catRules[i]['data_column'] %></td>
+                <td><%= catRules[i]['rule_match_type'] %></td>
+                <td><%= catRules[i]['rule_condition'] %></td>
+                <td><%= catRules[i]['rule_value'] %></td>
+                <td><%= catRules[i]['rule_threshold'] %></td>
+                <td><%= catRules[i]['rule_weight_score'] %></td>
+                <td class="actions">
+                    <i class="fa fa-pencil editRule"></i>
+                    <i class="fa fa-trash-o removeRule"></i>    
+                </td>
+            </tr>
+        <% } %>
+    </table>
+<% } %>

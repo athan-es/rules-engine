@@ -1,0 +1,33 @@
+<div id="applyRulesCard" class="clCard_main">
+    <div class="clCard_title">
+        <div class="clCard_titleText">Apply Rules</div>
+        <div class="clCard_menu">
+            <div class="clIconList-horz">        
+                <div class="form-group inlineGroup">
+                    <label class="small">Category</label>
+                    <select id="selApplyRuleCat" name="rcat" class="form-control">
+                        <option value="none">Select ...</option>
+                        <option selected value="blockbilling">Block Billing</option>                
+                    </select>
+                </div>
+            </div>
+            <i class="fa fa-remove closeBox"></i>   
+        </div>
+    </div>    
+    <div class="clCard_body">
+        <div class="catListing">
+            <div class="placeHolder_full">
+                <label>Select rule category above</label>
+            </div>
+        </div>
+        <div class="thSlider">
+            <span>Threshold minimum: </span>
+            <div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+                <div id="custom-handle" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 100%;">1</div>
+            </div> 
+        </div>
+    </div>
+    <div class="clCard_footer">
+        <button id="applyRuleBtn" type="button" class="btn btn-success">Apply Rules</button>
+    </div>
+</div>

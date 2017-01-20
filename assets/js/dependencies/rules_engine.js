@@ -49,7 +49,49 @@ jQuery(document).ready(function($) {
 
 	/* buttons action */
 	$( "#actManageRules" ).click(function() {
-		$(".clBox_top").load('raw?view=rules_engine/manage_rules');
+		if($(".clBox_top #manageRulesCard").length == 0) {
+			$.get('raw?view=rules_engine/manage_rules', function(data) {
+				$(data).prependTo(".clBox_top").slideDown("slow");
+
+				var selectedCat = $("#manageRulesCard select#selRuleCat :selected").val();
+				if(selectedCat != "none" && $("#manageRulesCard .placeHolder_full").length > 0) {
+					$("#manageRulesCard .clCard_body").load('rules_engine/getCategoryRules?rcat='+selectedCat);	
+				}
+			});	
+		}	
+		else {
+			$(".clBox_top #manageRulesCard").slideToggle();	
+		}
+	});
+	$("#actApplyRules").on('click', function(){
+		if($(".clBox_top #applyRulesCard").length == 0) {
+			$.get('raw?view=rules_engine/apply_rules', function(data) {
+				$(data).prependTo(".clBox_top").slideDown("slow");
+				
+				var selectedCat = $("#applyRulesCard select#selApplyRuleCat :selected").val();
+				if(selectedCat != "none" && $("#applyRulesCard .placeHolder_full").length > 0) {
+					$("#applyRulesCard .clCard_body .catListing").load('rules_engine/getCategoryRules?rcat='+selectedCat+'&format=checklist');	
+				}
+
+				/*slider*/
+				var handle = $( "#custom-handle" );
+				$( "#slider" ).slider({
+					value: $("#custom-handle").text(),
+					min: 0,
+					max: 1,
+					step: 0.1,
+					create: function() {
+						handle.text( $( this ).slider( "value" ) );
+					},
+					slide: function( event, ui ) {
+						handle.text( ui.value );
+					}
+				});
+			});
+		}
+		else {
+			$(".clBox_top #applyRulesCard").slideToggle();	
+		}
 	});
 
 	$("button#loadDatacontent").click(function() {
@@ -64,7 +106,19 @@ jQuery(document).ready(function($) {
 
 	$(document).on('click', ".clCard_main .closeBox", function(){
 		$(this).closest(".clCard_main").slideToggle();
-	});
+	});	
+
+	$(document).on("click",  "#applyRuleBtn", function(event){
+        event.preventDefault()
+        var selectedOptions = '&ruleopt=';
+        $(".selectRules input").each(function(index, value) {
+            if($(this).is(':checked')) {
+                selectedOptions += $(this).val() + ',';    
+            }
+        }); 
+        var thresholdVal = $("#applyRulesCard #slider #custom-handle").text();
+		$("#mainRulesEngine .dataTableContent").load('rules_engine/load_datatable?threshold='+thresholdVal+"&rcat=blockbilling"+selectedOptions.replace(/,\s*$/, ""));	
+    });
 
 	$(document).on('click', "#manageRulesCard .removeRule", function(){
 		$(this).closest(".ruleRow").addClass("selected");
@@ -119,4 +173,5 @@ jQuery(document).ready(function($) {
 			$(this).closest("form").find(".rtAnyThreshold").hide();
 		}	
 	});	
+	
 });

@@ -50,6 +50,9 @@ module.exports = {
 		res.view('rules_engine/content_data/load_datatable', {
 			xlsData: xlsDataRows,
 			reportColumns: reportColNamesLetter,
+			threshold:  (typeof req.query.threshold != 'undefined'? req.query.threshold : 0 ),
+			rcat: (typeof req.query.rcat!= 'undefined'? req.query.rcat : '' ),
+			ruleopt:(typeof req.query.ruleopt != 'undefined'?  req.query.ruleopt : '' ),
 			layout:false
 		});
 	},
@@ -83,6 +86,7 @@ module.exports = {
 
 			res.view('rules_engine/content_data/category_rules_table', {
 				catRules: categoryRules,
+				format: (typeof req.query.format != 'undefined'? req.query.format : 'table' ),
 				layout:false
 			});
 		});
